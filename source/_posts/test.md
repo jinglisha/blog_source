@@ -1,5 +1,5 @@
 ---
-title: 模块化-CommonJS2
+title: 模块化-CommonJS
 date: 2020-08-31 17:02:37
 tags: 模块化
 ---
@@ -44,17 +44,17 @@ tags: 模块化
 
 第一种情况:  util.js 是入口文件
 
-    ```JS
-    var count = 0;
-    function getNumber(){
-        count ++;
-        return count;
-    }
-    console.log(getNumber());
-    console.log(getNumber());
-    console.log(getNumber());
-    console.log(getNumber());
-    ```
+```JS
+var count = 0;
+function getNumber(){
+    count ++;
+    return count;
+}
+console.log(getNumber());
+console.log(getNumber());
+console.log(getNumber());
+console.log(getNumber());
+```
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4c620ea8037473ea566e4a63284ffd3~tplv-k3u1fbpfcp-zoom-1.image)
 
@@ -86,16 +86,16 @@ tags: 模块化
 
 举例说明上面一段话：
 
-    ```js
-    var count = 0; // 需要隐藏的内部实现
+```js
+var count = 0; // 需要隐藏的内部实现
 
-    // 要暴露给外部的接口（接口：比如数据、对象等希望给外部使用的东西）
-    function getNumber(){
-        count ++;
-        return count;
-    }
-    console.log(getNumber());
-    ```
+// 要暴露给外部的接口（接口：比如数据、对象等希望给外部使用的东西）
+function getNumber(){
+    count ++;
+    return count;
+}
+console.log(getNumber());
+```
 
 分析：
 默认情况下，以上代码全部隐藏，其他模块无法使用该模块，该模块内部的变量、函数都不会造成全局的污染，都是内部的实现；
